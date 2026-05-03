@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-course-amruthesh   # ✅ your own name
+  namespace: cloudstudents
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: course-amruthesh           # must match below
+  template:
+    metadata:
+      labels:
+        app: course-amruthesh
+    spec:
+      containers:
+      - name: course-service
+        image: 991524241826.dkr.ecr.ap-south-2.amazonaws.com/course/amruthesh:latest
+        ports:
+        - containerPort: 3001

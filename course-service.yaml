@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-course-amruthesh
+  namespace: cloudstudents
+spec:
+  selector:
+    app: course-amruthesh
+  ports:
+    - port: 80
+      targetPort: 3001   # 🔥 CRITICAL FIX

@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-course-amruthesh
+  namespace: cloudstudents
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /courses
+        pathType: Prefix
+        backend:
+          service:
+            name: service-course-amruthesh
+            port:
+              number: 80
