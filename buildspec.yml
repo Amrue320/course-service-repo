@@ -4,7 +4,7 @@ env:
   variables:
     AWS_REGION: "ap-south-2"
     AWS_ACCOUNT_ID: "991524241826"
-    ECR_REPO_NAME: "course-service"
+    ECR_REPO_NAME: "course/amruthesh"
 
 phases:
   pre_build:
